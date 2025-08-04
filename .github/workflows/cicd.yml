@@ -35,3 +35,8 @@ jobs:
           kubectl apply -f k8s_manifests/app_svc.yaml 
           kubectl rollout status deployment/pacman-deployment
           kubectl get svc pacman-svc -o wide
+          kubectl apply -f k8s_manifests/db_deployment.yaml
+          kubectl apply -f k8s_manifests/db_svc.yaml
+          kubectl apply -f k8s_manifests/db_sc.yaml
+          kubbectl rollout status statefulset/mongo
+          
