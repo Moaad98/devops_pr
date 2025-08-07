@@ -33,7 +33,7 @@ jobs:
           aws eks --region us-east-1 update-kubeconfig --name my-cluster
           kubectl apply -f k8s_manifests/app_deployment.yaml 
           kubectl apply -f k8s_manifests/app_svc.yaml 
-          kubectl rollout status deployment/pacman-deployment
+          kubectl rollout status deployment/pacman-app
           kubectl get svc pacman-svc -o wide
           kubectl apply -f k8s_manifests/db_deployment.yaml
           kubectl apply -f k8s_manifests/db_svc.yaml
